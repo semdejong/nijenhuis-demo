@@ -77,7 +77,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script async src={TRACKER_SRC} data-demo={content.slug} data-endpoint={TRACKER_ENDPOINT} />
       </head>
-      <body className="min-h-full bg-background pb-20 font-sans text-foreground lg:pb-0">
+      <body className="min-h-full bg-background pb-24 font-sans text-foreground lg:pb-0">
         <PageShell>{children}</PageShell>
         <SleadsBadge />
       </body>

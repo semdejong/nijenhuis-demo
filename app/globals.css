@@ -31,6 +31,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 8.75rem;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 5.75rem;
+  }
 }
 
 body {
@@ -61,6 +68,36 @@ h4 {
   font-weight: 600;
   letter-spacing: -0.015em;
   line-height: 1.2;
+}
+
+main :where(section, article, h1, h2, h3, [id]) {
+  scroll-margin-top: 8.75rem;
+}
+
+@media (min-width: 1024px) {
+  main :where(section, article, h1, h2, h3, [id]) {
+    scroll-margin-top: 5.75rem;
+  }
+}
+
+summary {
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-minus {
+  display: none;
+}
+
+details[open] .faq-plus {
+  display: none;
+}
+
+details[open] .faq-minus {
+  display: inline;
 }
 
 :focus-visible {

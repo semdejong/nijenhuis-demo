@@ -22,15 +22,17 @@ export default function Home() {
     <>
       <section data-section="hero">
         <Dossier label={hero.tab} spine={content.spines.winterswijk} animate>
-          <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
-            <div>
+          <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
+            <div className="order-2 lg:order-1">
               <h1 className="max-w-xl text-4xl text-balance sm:text-5xl">{hero.title}</h1>
               <p className="mt-5 max-w-xl text-pretty text-soft">{hero.lede}</p>
               <div className="mt-6">
                 <CtaButtons />
               </div>
             </div>
-            <PhotoPlate photo={hero.photo} priority />
+            <div className="order-1 lg:order-2">
+              <PhotoPlate photo={hero.photo} priority />
+            </div>
           </div>
         </Dossier>
       </section>
@@ -86,9 +88,9 @@ export default function Home() {
           <span aria-hidden className="h-px min-w-8 flex-1 bg-brand" />
         </div>
         <p className="mt-5 max-w-2xl text-pretty text-soft">{leerlijn.lede}</p>
-        <ol className="mt-8 grid gap-6 border-t border-brand sm:grid-cols-3">
+        <ol className="mt-8 grid border-t-2 border-brand sm:grid-cols-3">
           {leerlijn.stations.map((station) => (
-            <li key={station.title} className="border-t-2 border-brand pt-4 sm:-mt-px">
+            <li key={station.title} className="border-b border-hairline py-5 sm:border-b-0 sm:border-l sm:px-5 sm:first:border-l-0 sm:first:pl-0">
               <h3 className="text-xl">{station.title}</h3>
               <p className="mt-2 text-base text-soft">{station.text}</p>
             </li>
@@ -109,13 +111,13 @@ export default function Home() {
             <li key={item.id} className="border-b border-hairline">
               <Link
                 href={`/referenties#${item.id}`}
-                className="flex min-h-12 flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3"
+                className="flex min-h-12 flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
               >
                 <span>
-                  <span className="block font-serif text-2xl">{item.name}</span>
+                  <span className="text-link block font-serif text-2xl">{item.name}</span>
                   <span className="mt-1 block text-base text-soft">{item.line}</span>
                 </span>
-                <span className="font-label text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
+                <span className="font-label shrink-0 text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
               </Link>
             </li>
           ))}
@@ -127,17 +129,19 @@ export default function Home() {
           Beeldmateriaal
         </h2>
         <p className="mt-4 max-w-2xl text-soft">
-          Buitenzijden uit ons beeldmateriaal. Waar de gevel de naam niet zelf draagt, koppelen wij de foto niet aan een opdrachtgever.
+          Buitenzijden uit ons beeldmateriaal. Alleen Sociëteit Het Pakhuys koppelen wij aan een naam, omdat die naam op de gevel staat.
         </p>
-        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start">
+        <div className="mt-6 grid items-center gap-6 lg:grid-cols-[minmax(0,1.35fr)_minmax(16rem,0.8fr)]">
           <PhotoPlate photo={leadPhoto} />
-          <p className="max-w-md text-soft lg:pt-2">
-            De eerste plaat is een hoekpand. De andere platen hieronder zijn woonhuizen en, waar de gevel het zelf zegt, Sociëteit Het Pakhuys. Geen van deze foto&apos;s krijgt een verzonnen opdrachtgever.
+          <p className="max-w-md border-l-[7px] border-brand pl-4 text-soft">
+            Dit hoekpand. Daaronder woonhuizen, en de gevel die zichzelf Sociëteit Het Pakhuys noemt.
           </p>
         </div>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {restPhotos.map((photo) => (
-            <PhotoPlate key={photo.src} photo={photo} />
+          {restPhotos.map((photo, index) => (
+            <div key={photo.src} className={index === restPhotos.length - 1 ? "sm:col-span-2" : undefined}>
+              <PhotoPlate photo={photo} frame />
+            </div>
           ))}
         </div>
       </section>
@@ -147,9 +151,9 @@ export default function Home() {
           {particulier.title}
         </h2>
         <p className="mt-4 max-w-2xl text-pretty">{particulier.text}</p>
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <div className="mt-8 grid border-t-2 border-brand lg:grid-cols-3">
           {particulier.markets.map((market) => (
-            <article key={market.title} className="border-t-2 border-brand pt-4">
+            <article key={market.title} className="border-b border-hairline py-5 last:border-b-0 lg:border-b-0 lg:border-l lg:px-5 lg:first:border-l-0 lg:first:pl-0">
               <h3 className="text-2xl">{market.title}</h3>
               <p className="mt-2 text-soft">{market.text}</p>
             </article>
@@ -163,30 +167,35 @@ export default function Home() {
       <OffertePanel />
       <FaqList />
 
-      <section data-section="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title" className="text-3xl sm:text-4xl">
+      <section data-section="contact" aria-labelledby="contact-title" className="border border-foreground bg-foreground px-5 py-8 text-white sm:px-8">
+        <h2 id="contact-title" className="text-3xl text-white sm:text-4xl">
           Contact
         </h2>
-        <address className="mt-4 text-pretty">
+        <address className="mt-4 text-pretty text-white">
           <span className="block">{contact.street}</span>
           <span className="block">{contact.postalCity}</span>
         </address>
         <p className="mt-3">
-          <a className="text-link inline-flex min-h-11 items-center" href={contact.phoneHref} data-cta="bellen">
+          <a className="inline-flex min-h-11 items-center text-white underline decoration-white/70 underline-offset-4" href={contact.phoneHref} data-cta="bellen">
             {contact.phoneDisplay}
           </a>
         </p>
         <p>
-          <a className="text-link inline-flex min-h-11 items-center" href={contact.emailHref} data-cta="offerte">
+          <a className="inline-flex min-h-11 items-center text-white underline decoration-white/70 underline-offset-4" href={contact.emailHref} data-cta="offerte">
             {contact.email}
           </a>
         </p>
         <p className="mt-1">
-          <a className="text-link inline-flex min-h-11 items-center" href={contact.mapHref} target="_blank" rel="noopener noreferrer">
+          <a
+            className="inline-flex min-h-11 items-center text-white underline decoration-white/70 underline-offset-4"
+            href={contact.mapHref}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {contact.mapLabel}
           </a>
         </p>
-        <Link href="/contact#formulier" data-cta="offerte" className="btn btn-accent mt-6">
+        <Link href="/contact#formulier" data-cta="offerte" className="btn btn-accent mt-6 border-white hover:border-white hover:bg-white hover:text-foreground">
           Naar het formulier
         </Link>
       </section>

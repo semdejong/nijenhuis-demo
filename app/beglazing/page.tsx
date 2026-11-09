@@ -39,7 +39,6 @@ export default function BeglazingPage() {
           ))}
         </ul>
         <p className="mt-6 max-w-2xl text-pretty">{beglazing.withPaint}</p>
-        <p className="mt-3 max-w-2xl text-soft">De maat en de uitvoering stemmen wij af op het project.</p>
         <div className="mt-4 flex flex-col">
           <Link href="/diensten" className="text-link inline-flex min-h-11 items-center">
             Naar schilderwerk

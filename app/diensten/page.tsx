@@ -73,7 +73,7 @@ export default function DienstenPage() {
         <p className="mt-4 max-w-2xl text-pretty text-soft">{schilderwerk.markets}</p>
         <div className="mt-6 grid gap-6 lg:grid-cols-3">
           {content.particulier.markets.map((market) => (
-            <article key={market.title} className="border border-hairline bg-card px-5 py-5">
+            <article key={market.title} className="h-full border border-hairline bg-card px-5 py-5">
               <h3 className="text-xl">{market.title}</h3>
               <p className="mt-2 text-base text-soft">{market.text}</p>
             </article>
@@ -109,7 +109,7 @@ export default function DienstenPage() {
         <p className="mt-4 max-w-2xl text-soft">
           Foto&apos;s uit ons beeldmateriaal. Wij koppelen ze hier niet aan een opdrachtgever.
         </p>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)]">
           <PhotoPlate photo={detail} />
           <PhotoPlate photo={house} />
         </div>

@@ -5,7 +5,10 @@ export default function Footer() {
   const { company, contact, footer, dossiers } = content;
   return (
     <footer data-section="footer" className="border-t border-hairline bg-background">
-      <div className="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-10">
+      <div className="lg:grid lg:grid-cols-[15.75rem_minmax(0,1fr)]">
+        <div className="hidden lg:block" aria-hidden />
+        <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-10">
+          <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <p className="font-serif text-2xl">{company.name}</p>
           <p className="mt-2 text-base text-soft">{contact.address}</p>
@@ -52,9 +55,12 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+          </div>
+        </div>
       </div>
-      <div className="border-t border-hairline">
-        <p className="mx-auto max-w-5xl px-4 py-4 text-base text-soft sm:px-6 lg:px-10">{footer.noindex}</p>
+      <div className="border-t border-hairline lg:grid lg:grid-cols-[15.75rem_minmax(0,1fr)]">
+        <div className="hidden lg:block" aria-hidden />
+        <p className="mx-auto w-full max-w-5xl px-4 py-4 text-base text-soft sm:px-6 lg:px-10">{footer.noindex}</p>
       </div>
     </footer>
   );

@@ -31,10 +31,11 @@ export default function SpuitwerkPage() {
         <p className="mt-4 max-w-2xl text-soft">
           Het gesprek begint bij uw pand. Deze vier punten zijn genoeg om een vrijblijvende offerte te starten.
         </p>
-        <ol className="mt-6 border-t border-[#F86C00]">
+        <ol className="mt-6 border-t-2 border-foreground">
           {spuitwerk.asks.map((ask, index) => (
             <li key={ask} className="flex gap-4 border-b border-hairline py-4">
-              <span className="font-label w-8 shrink-0 text-soft">{index + 1}</span>
+              <span aria-hidden className="mt-1.5 h-6 w-1.5 shrink-0 bg-accent" />
+              <span className="font-label w-6 shrink-0 text-soft">{index + 1}</span>
               <span>{ask}</span>
             </li>
           ))}

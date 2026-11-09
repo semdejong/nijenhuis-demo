@@ -42,7 +42,7 @@ export default function ContactPage() {
       </Dossier>
 
       <section aria-labelledby="meenemen" className="grid items-start gap-8 lg:grid-cols-2">
-        <div>
+        <div className="min-w-0">
           <h2 id="meenemen" className="text-3xl">
             {offerte.notesTitle}
           </h2>
@@ -57,10 +57,7 @@ export default function ContactPage() {
         <PhotoPlate photo={premises} />
       </section>
 
-      <section id="formulier" data-section="contact" className="scroll-mt-32" aria-labelledby="formulier-title">
-        <h2 id="formulier-title" className="sr-only">
-          Formulier
-        </h2>
+      <section id="formulier" data-section="contact">
         <ContactForm />
       </section>
     </>

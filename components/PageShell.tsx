@@ -15,13 +15,11 @@ export default function PageShell({ children }: { children: React.ReactNode }) {
       <Masthead />
       <div className="lg:grid lg:grid-cols-[15.75rem_minmax(0,1fr)]">
         <DossierNav />
-        <div className="min-w-0">
-          <main id="inhoud" className="px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
-            <div className="mx-auto flex max-w-5xl flex-col gap-16 sm:gap-20">{children}</div>
-          </main>
-          <Footer />
-        </div>
+        <main id="inhoud" className="min-w-0 px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
+          <div className="mx-auto flex max-w-5xl flex-col gap-16 sm:gap-20">{children}</div>
+        </main>
       </div>
+      <Footer />
       <MobileBar />
     </>
   );

@@ -174,45 +174,45 @@ export const content = {
       {
         id: "villa-mondriaan",
         name: "Villa Mondriaan",
-        note: "Zakelijk",
-        line: "Een villa, door ons als zakelijk project genoemd.",
+        note: "Villa",
+        line: "Zakelijk werk voor Villa Mondriaan.",
       },
       {
         id: "schuurman-schoenen",
         name: "Schuurman Schoenen",
-        note: "Zakelijk",
-        line: "Een schoenenbedrijf, door ons als zakelijk project genoemd.",
+        note: "Winkel",
+        line: "Zakelijk werk voor dit schoenenbedrijf.",
       },
       {
         id: "skb",
         name: "Streekziekenhuis Koningin Beatrix (SKB)",
-        note: "Zakelijk",
-        line: "Het streekziekenhuis, door ons als zakelijk project genoemd.",
+        note: "Ziekenhuis",
+        line: "Zakelijk werk voor het streekziekenhuis, bij ons ook SKB.",
       },
       {
         id: "hesselink",
         name: "Zorgboerderij Hesselink",
-        note: "Zakelijk",
-        line: "Een zorgboerderij, door ons als zakelijk project genoemd.",
+        note: "Zorg",
+        line: "Zakelijk werk voor deze zorgboerderij.",
       },
       {
         id: "oxener-schoenen",
         name: "Oxener Schoenen",
-        note: "Zakelijk",
-        line: "Een schoenenbedrijf, door ons als zakelijk project genoemd.",
+        note: "Winkel",
+        line: "Zakelijk werk voor Oxener Schoenen, naast Schuurman Schoenen.",
       },
       {
         id: "gemeentelijk",
         name: "Gemeentelijke projecten",
-        note: "Zakelijk",
-        line: "Werk voor de gemeente. Welke gemeente en welk pand, dat specificeren wij hier niet.",
+        note: "Gemeente",
+        line: "Werk voor de gemeente, naast de panden die wij bij naam noemen.",
       },
     ],
     vve: {
       id: "pakhuys",
       name: "Sociëteit Pakhuys Winterswijk",
       note: "Vereniging van eigenaren",
-      line: "Genoemd bij ons werk voor verenigingen. De gevel draagt de naam Sociëteit Het Pakhuys.",
+      line: "Werk voor de vereniging van eigenaren. Op de gevel staat Sociëteit Het Pakhuys.",
     },
   },
 
@@ -405,7 +405,7 @@ export const content = {
     title: "Spuitwerk",
     lede: "Spuitwerk staat op onze lijst, naast schilderwerk en beglazingswerk. Een aparte lijst met spuittechnieken of voorbeelden publiceren wij niet. Belt of mailt u, dan bespreken wij of spuitwerk past bij uw project.",
     place:
-      "Het werk vertrekt vanuit ons pand aan de Europapark 6-P in Winterswijk. De foto toont dat pand en de bussen. Het is geen voorbeeld van een spuitklus.",
+      "Het werk vertrekt vanuit ons pand aan de Europapark 6-P in Winterswijk. Op de foto ziet u dat pand en de bussen waarmee wij rijden.",
     asksTitle: "Wat u ons vertelt",
     asks: [
       "De plaats van het werk.",
@@ -429,8 +429,7 @@ export const content = {
     vveTitle: "Verenigingen van eigenaren",
     vve: "Wij zijn ook actief bij verschillende verenigingen van eigenaren.",
     placeTitle: "Vanuit de Europapark",
-    place:
-      "U bereikt ons op Europapark 6-P, 7102 AM Winterswijk. De bussen rijden vanuit dat pand de Achterhoek in.",
+    place: "De bussen rijden vanuit dit pand de Achterhoek in.",
   },
 
   form: {

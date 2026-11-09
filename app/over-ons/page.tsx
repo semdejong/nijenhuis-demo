@@ -40,9 +40,9 @@ export default function OverOnsPage() {
         </div>
         <Dossier label="Opleiding" spine={spines.opleiding} href="/over-ons#opleiding">
           <p className="max-w-2xl text-pretty">{leerlijn.lede}</p>
-          <ol className="mt-6 grid gap-6 border-t border-brand sm:grid-cols-3">
+          <ol className="mt-6 grid border-t-2 border-brand sm:grid-cols-3">
             {leerlijn.stations.map((station) => (
-              <li key={station.title} className="pt-4">
+              <li key={station.title} className="border-b border-hairline py-5 last:border-b-0 sm:border-b-0 sm:border-l sm:px-5 sm:first:border-l-0 sm:first:pl-0">
                 <h3 className="text-xl">{station.title}</h3>
                 <p className="mt-2 text-base text-soft">{station.text}</p>
               </li>
@@ -64,10 +64,13 @@ export default function OverOnsPage() {
         <p className="mt-2 max-w-2xl text-soft">{references.vve.line}</p>
         <ul className="mt-8 border-t border-hairline">
           {references.business.map((item) => (
-            <li key={item.id} className="border-b border-hairline py-4">
-              <Link href={`/referenties#${item.id}`} className="block">
-                <span className="font-serif text-xl">{item.name}</span>
-                <span className="mt-1 block text-base text-soft">{item.line}</span>
+            <li key={item.id} className="border-b border-hairline">
+              <Link href={`/referenties#${item.id}`} className="flex min-h-12 flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                <span>
+                  <span className="text-link font-serif text-xl">{item.name}</span>
+                  <span className="mt-1 block text-base text-soft">{item.line}</span>
+                </span>
+                <span className="font-label shrink-0 text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
               </Link>
             </li>
           ))}

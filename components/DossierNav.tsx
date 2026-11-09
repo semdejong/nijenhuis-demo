@@ -22,7 +22,7 @@ export default function DossierNav() {
       data-section="dossiers"
       className="sticky top-[4.5rem] z-30 border-b border-hairline bg-background lg:h-[calc(100vh-4.5rem)] lg:overflow-y-auto lg:border-b-0 lg:border-r"
     >
-      <div className="flex items-stretch gap-2 overflow-x-auto px-3 py-2 lg:flex-col lg:gap-2 lg:overflow-visible lg:px-4 lg:py-8">
+      <div className="flex items-stretch gap-2 overflow-x-auto px-3 py-2 [mask-image:linear-gradient(to_right,black_calc(100%-1.75rem),transparent)] lg:flex-col lg:gap-2 lg:overflow-visible lg:px-4 lg:py-8 lg:pb-20 lg:[mask-image:none]">
         <p className="hidden font-label text-sm uppercase tracking-[0.18em] text-soft lg:mb-3 lg:block">
           Dossier
         </p>

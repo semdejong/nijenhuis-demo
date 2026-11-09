@@ -26,9 +26,9 @@ export default function ReferentiesPage() {
         <ul className="mt-6 border-t border-hairline">
           {references.business.map((item) => (
             <li key={item.id} id={item.id} className="scroll-mt-32 border-b border-hairline py-4">
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
                 <h3 className="text-2xl">{item.name}</h3>
-                <span className="font-label text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
+                <span className="font-label shrink-0 text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
               </div>
               <p className="mt-2 max-w-2xl text-soft">{item.line}</p>
             </li>
@@ -60,9 +60,13 @@ export default function ReferentiesPage() {
           Buitenzijden
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {photos.map((photo) => (
-            <PhotoPlate key={photo.src} photo={photo} />
-          ))}
+          {photos
+            .filter((photo) => photo.src !== "/img/fotos/03.png")
+            .map((photo, index, list) => (
+              <div key={photo.src} className={index === list.length - 1 ? "sm:col-span-2" : undefined}>
+                <PhotoPlate photo={photo} frame />
+              </div>
+            ))}
         </div>
       </section>
 
