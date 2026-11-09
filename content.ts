@@ -429,7 +429,7 @@ export const content = {
     vveTitle: "Verenigingen van eigenaren",
     vve: "Wij zijn ook actief bij verschillende verenigingen van eigenaren.",
     placeTitle: "Vanuit de Europapark",
-    place: "De bussen rijden vanuit dit pand de Achterhoek in.",
+    place: "De bussen vertrekken vanuit dit pand naar het werk.",
   },
 
   form: {

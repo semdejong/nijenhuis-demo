@@ -5,6 +5,7 @@ export default function NotFound() {
   const { contact, dossiers } = content;
   return (
     <section>
+      <title>Pagina niet gevonden | Nijenhuis Schilders</title>
       <h1 className="text-4xl sm:text-5xl">Pagina niet gevonden</h1>
       <p className="mt-4 max-w-xl text-pretty text-soft">
         Dit adres hoort niet bij een dossier. Kies hieronder een onderdeel, of bel ons direct.
