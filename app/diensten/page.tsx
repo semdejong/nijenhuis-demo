@@ -30,12 +30,33 @@ export default function DienstenPage() {
         </h2>
         <ul className="mt-6 border-t border-hairline">
           {schilderwerk.kinds.map((kind) => (
-            <li key={kind} className="flex items-center gap-4 border-b border-hairline py-4">
-              <span aria-hidden className="h-8 w-2 shrink-0 bg-brand" />
-              <span className="font-serif text-2xl">{kind}</span>
+            <li key={kind.title} className="flex gap-4 border-b border-hairline py-5">
+              <span aria-hidden className="mt-2 h-8 w-2 shrink-0 bg-brand" />
+              <div>
+                <h3 className="text-2xl">{kind.title}</h3>
+                <p className="mt-1 text-soft">{kind.text}</p>
+              </div>
             </li>
           ))}
         </ul>
+      </section>
+
+      <section aria-labelledby="kanten-diensten">
+        <h2 id="kanten-diensten" className="text-3xl">
+          {content.sides.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-soft">{content.sides.lede}</p>
+        <div className="mt-6 grid gap-6 md:grid-cols-2">
+          {content.sides.items.map((item) => (
+            <article key={item.title} className="flex border border-hairline bg-card">
+              <div aria-hidden className="w-2 shrink-0" style={{ background: item.spine }} />
+              <div className="px-5 py-6">
+                <h3 className="text-2xl">{item.title}</h3>
+                <p className="mt-3 text-soft">{item.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section aria-labelledby="advies-title">
@@ -50,6 +71,14 @@ export default function DienstenPage() {
           {schilderwerk.marketsTitle}
         </h2>
         <p className="mt-4 max-w-2xl text-pretty text-soft">{schilderwerk.markets}</p>
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          {content.particulier.markets.map((market) => (
+            <article key={market.title} className="border border-hairline bg-card px-5 py-5">
+              <h3 className="text-xl">{market.title}</h3>
+              <p className="mt-2 text-base text-soft">{market.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section aria-labelledby="samen-title">

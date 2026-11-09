@@ -123,6 +123,7 @@ export const content = {
         href: "/diensten",
         spine: "#2B5BA9",
         text: "Wij verzorgen schilderwerk bij verbouw, nieuwbouw, renovatie en restauratie, met kleuradvies en een keuze uit de beste materialen.",
+        detail: "Binnen en buiten. Voor een verbouwing, voor nieuwbouw en voor onderhoud dat gewoon doorloopt.",
         link: "Naar schilderwerk",
       },
       {
@@ -131,6 +132,7 @@ export const content = {
         href: "/beglazing",
         spine: "#1A1F25",
         text: "Wij leveren glas in alle soorten en maten: isolerende beglazing, enkelvoudig glas, monumentaal glas, brandwerend glas en gelaagd glas.",
+        detail: "De maat en de uitvoering stemmen wij af op het project. Vraag vrijblijvend een offerte aan.",
         link: "Naar beglazing",
       },
       {
@@ -139,6 +141,7 @@ export const content = {
         href: "/spuitwerk",
         spine: "#F86C00",
         text: "Spuitwerk staat bij ons naast schilderwerk en beglazing; de aanpak stemmen wij af op het project.",
+        detail: "Geen aparte technieklijst. U belt of mailt, en wij zeggen of spuitwerk past.",
         link: "Naar spuitwerk",
       },
     ],
@@ -150,15 +153,15 @@ export const content = {
     stations: [
       {
         title: "Frank en Gabi te Brake",
-        text: "Eigenaren van Nijenhuis Schilders.",
+        text: "Frank en Gabi te Brake zijn de eigenaren. Onder hun leiding loopt het schilder- en glaswerk in Winterswijk.",
       },
       {
         title: "Ervaren schilders",
-        text: "Schilders met jarenlange ervaring in het vak.",
+        text: "Naast de eigenaren werken schilders met jarenlange ervaring in het vak. Zij nemen het werk op de bouw en aan huis.",
       },
       {
         title: "Savantis",
-        text: "Leerlingen worden opgeleid tot volwaardig schilders. Wij zijn een Savantis gecertificeerd opleidingsbedrijf.",
+        text: "Leerlingen worden bij Savantis opgeleid tot volwaardig schilders. Zo blijft het vak in het bedrijf, naast de ervaring die er al is. Wij zijn een Savantis gecertificeerd opleidingsbedrijf.",
       },
     ],
   },
@@ -168,25 +171,48 @@ export const content = {
     intro:
       "Deze namen noemen wij zelf als gerealiseerde projecten. Wij voegen er geen jaartallen, oppervlakten of citaten aan toe.",
     business: [
-      { id: "villa-mondriaan", name: "Villa Mondriaan", note: "Zakelijk" },
-      { id: "schuurman-schoenen", name: "Schuurman Schoenen", note: "Zakelijk" },
+      {
+        id: "villa-mondriaan",
+        name: "Villa Mondriaan",
+        note: "Zakelijk",
+        line: "Een villa, door ons als zakelijk project genoemd.",
+      },
+      {
+        id: "schuurman-schoenen",
+        name: "Schuurman Schoenen",
+        note: "Zakelijk",
+        line: "Een schoenenbedrijf, door ons als zakelijk project genoemd.",
+      },
       {
         id: "skb",
         name: "Streekziekenhuis Koningin Beatrix (SKB)",
         note: "Zakelijk",
+        line: "Het streekziekenhuis, door ons als zakelijk project genoemd.",
       },
-      { id: "hesselink", name: "Zorgboerderij Hesselink", note: "Zakelijk" },
-      { id: "oxener-schoenen", name: "Oxener Schoenen", note: "Zakelijk" },
+      {
+        id: "hesselink",
+        name: "Zorgboerderij Hesselink",
+        note: "Zakelijk",
+        line: "Een zorgboerderij, door ons als zakelijk project genoemd.",
+      },
+      {
+        id: "oxener-schoenen",
+        name: "Oxener Schoenen",
+        note: "Zakelijk",
+        line: "Een schoenenbedrijf, door ons als zakelijk project genoemd.",
+      },
       {
         id: "gemeentelijk",
         name: "Gemeentelijke projecten",
         note: "Zakelijk",
+        line: "Werk voor de gemeente. Welke gemeente en welk pand, dat specificeren wij hier niet.",
       },
     ],
     vve: {
       id: "pakhuys",
       name: "Sociëteit Pakhuys Winterswijk",
       note: "Vereniging van eigenaren",
+      line: "Genoemd bij ons werk voor verenigingen. De gevel draagt de naam Sociëteit Het Pakhuys.",
     },
   },
 
@@ -270,8 +296,39 @@ export const content = {
   },
 
   particulier: {
-    title: "Particulier en VvE",
+    title: "Drie markten",
     text: "Ook voor particulieren zijn wij een adres voor glas- en schilderwerk. Daarnaast zijn wij actief bij verenigingen van eigenaren. Sociëteit Pakhuys Winterswijk staat daarbij genoemd.",
+    markets: [
+      {
+        title: "Zakelijk",
+        text: "Projectmatig schilderwerk bij verbouwingen, en regulier onderhoud. Groot werk en kleiner werk.",
+      },
+      {
+        title: "Particulier",
+        text: "Glas- en schilderwerk aan huis. Wij zijn in die markt een bekend adres in Winterswijk.",
+      },
+      {
+        title: "Vereniging van eigenaren",
+        text: "Wij werken voor verschillende verenigingen. Sociëteit Pakhuys Winterswijk noemen wij met name.",
+      },
+    ],
+  },
+
+  sides: {
+    title: "Binnen en buiten",
+    lede: "Ons schilderwerk geldt voor het interieur en voor de gevel. Glaswerk leveren wij in allerlei vormen en maten, passend bij datzelfde pand.",
+    items: [
+      {
+        title: "Binnen",
+        text: "Binnenschilderwerk hoort bij wat wij doen, van een kamer tot een groter project.",
+        spine: "#2B5BA9",
+      },
+      {
+        title: "Buiten",
+        text: "Buitenschilderwerk hoort er evenzeer bij: gevels, kozijnen en het werk dat het weer ziet.",
+        spine: "#1A1F25",
+      },
+    ],
   },
 
   offerte: {
@@ -281,6 +338,12 @@ export const content = {
       "U belt 0543-521161 of mailt info@nijenhuis-schilders.nl.",
       "U noemt uw plaats en het soort werk: schilderwerk, beglazing, spuitwerk of een combinatie.",
       "Wij maken een vrijblijvende offerte. Het formulier op deze conceptsite verstuurt niets.",
+    ],
+    notesTitle: "Handig om erbij te zeggen",
+    notes: [
+      "Of het binnen, buiten of allebei is.",
+      "Of er ook glas of spuitwerk bij hoort.",
+      "Of het een verbouwing, nieuwbouw, renovatie, restauratie of onderhoud is.",
     ],
   },
 
@@ -301,12 +364,21 @@ export const content = {
       q: "Werken jullie voor een vereniging van eigenaren?",
       a: "Ja. Wij zijn actief bij verschillende verenigingen van eigenaren. Sociëteit Pakhuys Winterswijk is een van de projecten die wij noemen.",
     },
+    {
+      q: "Doen jullie binnen- en buitenschilderwerk?",
+      a: "Ja. Wij doen binnen- en buitenschilderwerk, voor grote projecten en voor klein werk.",
+    },
   ],
 
   schilderwerk: {
     title: "Schilderwerk bij verbouw, nieuwbouw, renovatie en restauratie",
     lede: "Nijenhuis Schilders is specialist in schilderwerk bij verbouw, nieuwbouw, renovatie en restauratie. Voor kleuradvies en materiaalkeuze bent u bij ons aan het juiste adres. Wij werken uitsluitend met de beste materialen.",
-    kinds: ["Verbouw", "Nieuwbouw", "Renovatie", "Restauratie"],
+    kinds: [
+      { title: "Verbouw", text: "Schilderwerk wanneer een bestaand pand wordt verbouwd." },
+      { title: "Nieuwbouw", text: "Schilderwerk bij nieuw gebouwde panden." },
+      { title: "Renovatie", text: "Schilderwerk bij het opknappen van bestaand werk." },
+      { title: "Restauratie", text: "Schilderwerk waar het pand in zijn staat behouden of hersteld wordt." },
+    ],
     adviceTitle: "Kleuradvies en materiaalkeuze",
     advice:
       "Voor kleuradvies en materiaalkeuze bent u bij ons aan het juiste adres. Wij werken uitsluitend met de beste materialen.",
@@ -319,17 +391,28 @@ export const content = {
     title: "Beglazingswerk",
     lede: "Nijenhuis Schilders levert glas in alle soorten en maten. Vraag vrijblijvend een offerte aan.",
     types: [
-      "Isolerende beglazing",
-      "Enkelvoudig glas",
-      "Monumentaal glas",
-      "Brandwerend glas",
-      "Gelaagd glas",
+      { title: "Isolerende beglazing", text: "Glas dat isoleert. Welke opbouw past, stemmen wij af op het kozijn en het pand." },
+      { title: "Enkelvoudig glas", text: "Glas in één laag, waar dat bij het pand past." },
+      { title: "Monumentaal glas", text: "Glas voor monumentale panden, in de maat die het werk vraagt." },
+      { title: "Brandwerend glas", text: "Glas met een brandwerende functie, gekozen bij het project." },
+      { title: "Gelaagd glas", text: "Glas dat uit lagen is opgebouwd. De opbouw stemmen wij af op het werk." },
     ],
+    withPaint:
+      "Beglazing loopt bij ons samen met schilderwerk en, waar dat past, met spuitwerk. U hoeft daarvoor niet naar een tweede bedrijf.",
   },
 
   spuitwerk: {
     title: "Spuitwerk",
     lede: "Spuitwerk staat op onze lijst, naast schilderwerk en beglazingswerk. Een aparte lijst met spuittechnieken of voorbeelden publiceren wij niet. Belt of mailt u, dan bespreken wij of spuitwerk past bij uw project.",
+    place:
+      "Het werk vertrekt vanuit ons pand aan de Europapark 6-P in Winterswijk. De foto toont dat pand en de bussen. Het is geen voorbeeld van een spuitklus.",
+    asksTitle: "Wat u ons vertelt",
+    asks: [
+      "De plaats van het werk.",
+      "Of het binnen, buiten of allebei is.",
+      "Of schilderwerk of beglazing erbij hoort.",
+      "Een korte toelichting op het pand.",
+    ],
   },
 
   about: {
@@ -345,6 +428,9 @@ export const content = {
       "Ook in de particuliere markt is Nijenhuis Schilders een begrip als het gaat om glas- en schilderwerk.",
     vveTitle: "Verenigingen van eigenaren",
     vve: "Wij zijn ook actief bij verschillende verenigingen van eigenaren.",
+    placeTitle: "Vanuit de Europapark",
+    place:
+      "U bereikt ons op Europapark 6-P, 7102 AM Winterswijk. De bussen rijden vanuit dat pand de Achterhoek in.",
   },
 
   form: {
@@ -365,11 +451,23 @@ export const content = {
   privacy: {
     title: "Privacy",
     lede: "Deze pagina hoort bij een conceptwebsite voor Nijenhuis Schilders, gemaakt door Sleads. De pagina's zijn niet bedoeld om geïndexeerd te worden.",
-    points: [
-      "Het formulier op de contactpagina verstuurt niets. Wat u invult, blijft in uw browser. Wij slaan het niet op en sturen het niet door.",
-      "Voor een vrijblijvende offerte belt u 0543-521161 of mailt u info@nijenhuis-schilders.nl.",
-      "Een cookieloze teller kan een paginaweergave van dit concept registreren. Wij plaatsen geen advertentiecookies en vragen geen account.",
-      "Adres: Europapark 6-P, 7102 AM Winterswijk.",
+    sections: [
+      {
+        title: "Het formulier",
+        text: "Het formulier op de contactpagina verstuurt niets. Wat u invult, blijft in uw browser. Wij slaan het niet op en sturen het niet door. Er is geen account.",
+      },
+      {
+        title: "De echte route",
+        text: "Voor een vrijblijvende offerte belt u 0543-521161 of mailt u info@nijenhuis-schilders.nl. Dat gesprek of die mail loopt buiten dit concept om.",
+      },
+      {
+        title: "Teller",
+        text: "Een cookieloze teller kan een paginaweergave van dit concept registreren. Wij plaatsen geen advertentiecookies.",
+      },
+      {
+        title: "Adres",
+        text: "Nijenhuis Schilders, Europapark 6-P, 7102 AM Winterswijk.",
+      },
     ],
   },
 

@@ -29,16 +29,25 @@ export default function BeglazingPage() {
         </h2>
         <ul className="mt-6 border-t border-hairline">
           {beglazing.types.map((type) => (
-            <li key={type} className="flex items-center gap-4 border-b border-hairline py-5">
-              <span aria-hidden className="h-8 w-2 shrink-0" style={{ background: spines.beglazing }} />
-              <span className="font-serif text-3xl">{type}</span>
+            <li key={type.title} className="flex gap-4 border-b border-hairline py-5">
+              <span aria-hidden className="mt-2 h-10 w-2 shrink-0" style={{ background: spines.beglazing }} />
+              <div>
+                <h3 className="font-serif text-3xl">{type.title}</h3>
+                <p className="mt-1 max-w-2xl text-soft">{type.text}</p>
+              </div>
             </li>
           ))}
         </ul>
-        <p className="mt-4 max-w-2xl text-soft">De maat en de uitvoering stemmen wij af op het project.</p>
-        <Link href="/diensten" className="text-link mt-4 inline-flex min-h-11 items-center">
-          Terug naar schilderwerk
-        </Link>
+        <p className="mt-6 max-w-2xl text-pretty">{beglazing.withPaint}</p>
+        <p className="mt-3 max-w-2xl text-soft">De maat en de uitvoering stemmen wij af op het project.</p>
+        <div className="mt-4 flex flex-col">
+          <Link href="/diensten" className="text-link inline-flex min-h-11 items-center">
+            Naar schilderwerk
+          </Link>
+          <Link href="/spuitwerk" className="text-link inline-flex min-h-11 items-center">
+            Naar spuitwerk
+          </Link>
+        </div>
       </section>
 
       <OffertePanel />

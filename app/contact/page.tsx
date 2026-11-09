@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import Dossier from "@/components/Dossier";
+import PhotoPlate from "@/components/PhotoPlate";
 import { content } from "@/content";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const { contact, spines } = content;
+  const { contact, spines, offerte, premises, about } = content;
   return (
     <>
       <Dossier label="Contact" spine={spines.winterswijk}>
@@ -37,7 +38,24 @@ export default function ContactPage() {
             {contact.mapLabel}
           </a>
         </p>
+        <p className="mt-6 max-w-2xl text-soft">{about.place}</p>
       </Dossier>
+
+      <section aria-labelledby="meenemen" className="grid items-start gap-8 lg:grid-cols-2">
+        <div>
+          <h2 id="meenemen" className="text-3xl">
+            {offerte.notesTitle}
+          </h2>
+          <ul className="mt-4 border-t border-hairline">
+            {offerte.notes.map((note) => (
+              <li key={note} className="border-b border-hairline py-3">
+                {note}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <PhotoPlate photo={premises} />
+      </section>
 
       <section id="formulier" data-section="contact" className="scroll-mt-32" aria-labelledby="formulier-title">
         <h2 id="formulier-title" className="sr-only">

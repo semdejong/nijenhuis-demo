@@ -14,6 +14,16 @@ export default function OffertePanel() {
           <li key={step}>{step}</li>
         ))}
       </ol>
+      <div className="mt-8 border-t border-hairline pt-6">
+        <h3 className="text-xl">{offerte.notesTitle}</h3>
+        <ul className="mt-3 max-w-2xl">
+          {offerte.notes.map((note) => (
+            <li key={note} className="border-b border-hairline py-3">
+              {note}
+            </li>
+          ))}
+        </ul>
+      </div>
       <div className="mt-6">
         <CtaButtons />
       </div>

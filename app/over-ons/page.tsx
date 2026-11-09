@@ -19,14 +19,16 @@ export default function OverOnsPage() {
         <p className="mt-5 max-w-2xl text-pretty text-soft">{about.lede}</p>
       </Dossier>
 
-      <section aria-labelledby="team-title">
-        <h2 id="team-title" className="text-3xl">
-          {about.teamTitle}
-        </h2>
-        <p className="mt-4 max-w-2xl text-pretty text-soft">{about.team}</p>
-        <div className="mt-6 max-w-3xl">
-          <PhotoPlate photo={premises} />
+      <section aria-labelledby="team-title" className="grid items-start gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+        <div>
+          <h2 id="team-title" className="text-3xl">
+            {about.teamTitle}
+          </h2>
+          <p className="mt-4 max-w-2xl text-pretty text-soft">{about.team}</p>
+          <h2 className="mt-10 text-3xl">{about.placeTitle}</h2>
+          <p className="mt-4 max-w-2xl text-pretty text-soft">{about.place}</p>
         </div>
+        <PhotoPlate photo={premises} />
       </section>
 
       <section id="opleiding" data-section="leerlijn" className="scroll-mt-32" aria-labelledby="opleiding-title">
@@ -58,7 +60,18 @@ export default function OverOnsPage() {
         <p className="mt-4 max-w-2xl text-pretty text-soft">{about.private}</p>
         <h2 className="mt-10 text-3xl">{about.vveTitle}</h2>
         <p className="mt-4 max-w-2xl text-pretty text-soft">{about.vve}</p>
-        <p className="mt-4 font-serif text-2xl">{references.vve.name}</p>
+        <p className="mt-4 max-w-2xl font-serif text-2xl">{references.vve.name}</p>
+        <p className="mt-2 max-w-2xl text-soft">{references.vve.line}</p>
+        <ul className="mt-8 border-t border-hairline">
+          {references.business.map((item) => (
+            <li key={item.id} className="border-b border-hairline py-4">
+              <Link href={`/referenties#${item.id}`} className="block">
+                <span className="font-serif text-xl">{item.name}</span>
+                <span className="mt-1 block text-base text-soft">{item.line}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
         <Link href="/referenties" className="text-link mt-4 inline-flex min-h-11 items-center">
           Alle referenties
         </Link>

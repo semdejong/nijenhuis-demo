@@ -30,6 +30,7 @@ export default function ReferentiesPage() {
                 <h3 className="text-2xl">{item.name}</h3>
                 <span className="font-label text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
               </div>
+              <p className="mt-2 max-w-2xl text-soft">{item.line}</p>
             </li>
           ))}
         </ul>
@@ -46,8 +47,9 @@ export default function ReferentiesPage() {
           </div>
           <div className="p-4 sm:p-6">
             <PhotoPlate photo={hero.photo} />
-            <p className="mt-4 max-w-2xl text-soft">
-              De foto toont de buitenzijde. De gevel draagt de naam Sociëteit Het Pakhuys. De overige foto&apos;s hieronder laten wij zonder opdrachtgever, omdat die koppeling niet vaststaat.
+            <p className="mt-4 max-w-2xl text-soft">{references.vve.line}</p>
+            <p className="mt-3 max-w-2xl text-soft">
+              De foto toont de buitenzijde. De overige platen hieronder laten wij zonder opdrachtgever, omdat die koppeling niet vaststaat. U ziet gevels: een hoekpand, woonhuizen met luiken, een wit huis en een vrijstaand huis met bijgebouw.
             </p>
           </div>
         </article>

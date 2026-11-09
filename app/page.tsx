@@ -15,7 +15,8 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
-  const { hero, services, leerlijn, references, photos, particulier, contact } = content;
+  const { hero, services, leerlijn, references, photos, particulier, contact, sides } = content;
+  const [leadPhoto, ...restPhotos] = photos;
 
   return (
     <>
@@ -50,10 +51,29 @@ export default function Home() {
               tabClassName={tabOffsets[index]}
             >
               <p className="max-w-2xl">{item.text}</p>
+              <p className="mt-3 max-w-2xl text-soft">{item.detail}</p>
               <Link href={item.href} className="text-link mt-4 inline-flex min-h-11 items-center">
                 {item.link}
               </Link>
             </Dossier>
+          ))}
+        </div>
+      </section>
+
+      <section data-section="binnen-buiten" aria-labelledby="kanten-title">
+        <h2 id="kanten-title" className="text-3xl sm:text-4xl">
+          {sides.title}
+        </h2>
+        <p className="mt-4 max-w-2xl text-pretty text-soft">{sides.lede}</p>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {sides.items.map((item) => (
+            <article key={item.title} className="flex border border-hairline bg-card">
+              <div aria-hidden className="w-2 shrink-0" style={{ background: item.spine }} />
+              <div className="px-5 py-6">
+                <h3 className="text-2xl">{item.title}</h3>
+                <p className="mt-3 text-soft">{item.text}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -91,7 +111,10 @@ export default function Home() {
                 href={`/referenties#${item.id}`}
                 className="flex min-h-12 flex-wrap items-baseline justify-between gap-x-4 gap-y-1 py-3"
               >
-                <span className="font-serif text-2xl">{item.name}</span>
+                <span>
+                  <span className="block font-serif text-2xl">{item.name}</span>
+                  <span className="mt-1 block text-base text-soft">{item.line}</span>
+                </span>
                 <span className="font-label text-sm uppercase tracking-[0.12em] text-soft">{item.note}</span>
               </Link>
             </li>
@@ -106,8 +129,14 @@ export default function Home() {
         <p className="mt-4 max-w-2xl text-soft">
           Buitenzijden uit ons beeldmateriaal. Waar de gevel de naam niet zelf draagt, koppelen wij de foto niet aan een opdrachtgever.
         </p>
+        <div className="mt-6 grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)] lg:items-start">
+          <PhotoPlate photo={leadPhoto} />
+          <p className="max-w-md text-soft lg:pt-2">
+            De eerste plaat is een hoekpand. De andere platen hieronder zijn woonhuizen en, waar de gevel het zelf zegt, Sociëteit Het Pakhuys. Geen van deze foto&apos;s krijgt een verzonnen opdrachtgever.
+          </p>
+        </div>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {photos.map((photo) => (
+          {restPhotos.map((photo) => (
             <PhotoPlate key={photo.src} photo={photo} />
           ))}
         </div>
@@ -118,6 +147,14 @@ export default function Home() {
           {particulier.title}
         </h2>
         <p className="mt-4 max-w-2xl text-pretty">{particulier.text}</p>
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {particulier.markets.map((market) => (
+            <article key={market.title} className="border-t-2 border-brand pt-4">
+              <h3 className="text-2xl">{market.title}</h3>
+              <p className="mt-2 text-soft">{market.text}</p>
+            </article>
+          ))}
+        </div>
         <Link href={`/referenties#${references.vve.id}`} className="text-link mt-4 inline-flex min-h-11 items-center">
           {references.vve.name}
         </Link>

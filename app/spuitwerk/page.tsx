@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import CtaButtons from "@/components/CtaButtons";
 import Dossier from "@/components/Dossier";
+import OffertePanel from "@/components/OffertePanel";
+import PhotoPlate from "@/components/PhotoPlate";
 import { content } from "@/content";
 
 export const metadata: Metadata = {
@@ -11,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function SpuitwerkPage() {
-  const { spuitwerk, spines } = content;
+  const { spuitwerk, spines, premises, services } = content;
   return (
     <>
       <Dossier label="Spuitwerk" spine={spines.spuitwerk}>
@@ -22,26 +24,45 @@ export default function SpuitwerkPage() {
         </div>
       </Dossier>
 
-      <section aria-labelledby="spuit-naast">
-        <h2 id="spuit-naast" className="text-3xl">
-          Naast de andere dossiers
+      <section aria-labelledby="spuit-vragen">
+        <h2 id="spuit-vragen" className="text-3xl">
+          {spuitwerk.asksTitle}
         </h2>
         <p className="mt-4 max-w-2xl text-soft">
-          Voor schilderwerk en beglazing staan aparte dossiers. Spuitwerk vraagt u aan via hetzelfde telefoonnummer en hetzelfde e-mailadres.
+          Het gesprek begint bij uw pand. Deze vier punten zijn genoeg om een vrijblijvende offerte te starten.
         </p>
-        <ul className="mt-4">
-          <li>
-            <Link href="/diensten" className="text-link inline-flex min-h-11 items-center">
-              Schilderwerk
-            </Link>
-          </li>
-          <li>
-            <Link href="/beglazing" className="text-link inline-flex min-h-11 items-center">
-              Beglazing
-            </Link>
-          </li>
-        </ul>
+        <ol className="mt-6 border-t border-[#F86C00]">
+          {spuitwerk.asks.map((ask, index) => (
+            <li key={ask} className="flex gap-4 border-b border-hairline py-4">
+              <span className="font-label w-8 shrink-0 text-soft">{index + 1}</span>
+              <span>{ask}</span>
+            </li>
+          ))}
+        </ol>
       </section>
+
+      <section aria-labelledby="spuit-pand" className="grid items-start gap-8 lg:grid-cols-2">
+        <div>
+          <h2 id="spuit-pand" className="text-3xl">
+            Vanuit Winterswijk
+          </h2>
+          <p className="mt-4 text-pretty text-soft">{spuitwerk.place}</p>
+          <ul className="mt-6">
+            {services.items
+              .filter((item) => item.id !== "spuitwerk")
+              .map((item) => (
+                <li key={item.id}>
+                  <Link href={item.href} className="text-link inline-flex min-h-11 items-center">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+        <PhotoPlate photo={premises} />
+      </section>
+
+      <OffertePanel />
     </>
   );
 }
